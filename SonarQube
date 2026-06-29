@@ -30,30 +30,30 @@ step3. Set Java 17 for SonarQube user
 ---------------------------------
 Run : echo $JAVA_HOME
  
-      //after that paste the below two lines
-      export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-      export PATH=$JAVA_HOME/bin:$PATH
+//after that paste the below two lines
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
 
-	Now check java version
-	java --version
+Now check java version
+java --version
 
-	It should show:
-	java 17 version
+It should show:
+java 17 version
 
 step4: Make it permanent for sonar user
 --------------------------------
 Run : nano /opt/sonarqube-8.9.6.50800/conf/sonar.properties
 
-      //Paste this at the end of the file:
-	    sonar.javaHome=/usr/lib/jvm/java-17-openjdk-amd64
+//Paste this at the end of the file:
+sonar.javaHome=/usr/lib/jvm/java-17-openjdk-amd64
 
 step5: To check whether it is added permanently, verify the sonar.properties file
 --------------------------------------------------------------------------
-	Run:
-	grep sonar.javaHome /opt/sonarqube-8.9.6.50800/conf/sonar.properties
+Run:
+grep sonar.javaHome /opt/sonarqube-8.9.6.50800/conf/sonar.properties
 
-	If it is added, you should see:
-	sonar.javaHome=/usr/lib/jvm/java-17-openjdk-amd64
+If it is added, you should see:
+sonar.javaHome=/usr/lib/jvm/java-17-openjdk-amd64
 
-	Check java version
-	It should show : java 17 version
+Check java version
+It should show : java 17 version
