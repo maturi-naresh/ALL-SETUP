@@ -1,0 +1,5 @@
+sudo timedatectl set-timezone Asia/Kolkata
+
+timedatectl
+
+sudo systemctl restart jenkins
