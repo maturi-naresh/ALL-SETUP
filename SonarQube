@@ -1,0 +1,59 @@
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install openjdk-17-jdk -y
+sudo apt install openjdk-21-jdk -y
+cd /opt
+sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.6.50800.zip
+sudo unzip sonarqube-8.9.6.50800.zip
+sudo useradd sonar
+sudo passwd sonar
+sudo chown -R sonar:sonar sonarqube-8.9.6.50800.zip
+sudo su - nexus
+Set Java 17 for SonarQube user (Follow below steps)
+cd /opt
+cd
+cd bin
+./sonar.sh start
+./sonar.sh status
+
+
+
+step1. Switch to Sonar User
+-----------------------
+sudo su - sonar
+
+step2. Check Java 17 exists
+-----------------------
+java --version
+
+step3. Set Java 17 for SonarQube user
+---------------------------------
+Run : echo $JAVA_HOME
+ 
+      //after that paste the below two lines
+      export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+      export PATH=$JAVA_HOME/bin:$PATH
+
+	Now check java version
+	java --version
+
+	It should show:
+	java 17 version
+
+step4: Make it permanent for sonar user
+--------------------------------
+Run : nano /opt/sonarqube-8.9.6.50800/conf/sonar.properties
+
+      //Paste this at the end of the file:
+	    sonar.javaHome=/usr/lib/jvm/java-17-openjdk-amd64
+
+step5: To check whether it is added permanently, verify the sonar.properties file
+--------------------------------------------------------------------------
+	Run:
+	grep sonar.javaHome /opt/sonarqube-8.9.6.50800/conf/sonar.properties
+
+	If it is added, you should see:
+	sonar.javaHome=/usr/lib/jvm/java-17-openjdk-amd64
+
+	Check java version
+	It should show : java 17 version
