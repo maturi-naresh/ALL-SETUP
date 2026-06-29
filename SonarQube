@@ -9,7 +9,7 @@ sudo useradd sonar
 sudo passwd sonar
 sudo chown -R sonar:sonar sonarqube-8.9.6.50800.zip
 sudo su - nexus
-Set Java 17 for SonarQube user (Follow below steps)
+//Set Java 17 for SonarQube user (Follow below steps)
 cd /opt
 cd
 cd bin
