@@ -1,0 +1,16 @@
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt install openjdk-21-jdk -y
+cd /opt
+sudo wget https://download.sonatype.com/nexus/3/nexus-3.93.2-01-linux-x86_64.tar.gz
+sudo tar -zxvf nexus-3.93.2-01-linux-x86_64.tar.gz
+sudo useradd nexus
+sudo passwd nexus
+sudo chown -R nexus:nexus nexus-3.93.2-01
+sudo chown -R nexus:nexus sonatype-work/
+sudo su - nexus
+cd /opt
+cd nexus-3.93.2-01
+cd bin
+./nexus start
+./nexus status
