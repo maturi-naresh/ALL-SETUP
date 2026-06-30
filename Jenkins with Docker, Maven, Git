@@ -18,3 +18,11 @@ sudo systemctl status jenkins
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo systemctl status docker
+
+
+//afetr installing check versions
+git --version
+java --version
+jenkins --version
+maven --version
+docker --version
