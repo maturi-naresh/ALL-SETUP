@@ -1,10 +1,6 @@
+//ADD GRAFANA REPO
 helm repo add grafana-community https://grafana-community.github.io/helm-charts
 helm repo update
 
-helm install grafana grafana-community/grafana \
-  --namespace grafana \
-  --create-namespace \
-  --set persistence.storageClassName=gp2 \
-  --set persistence.enabled=true \
-  --set adminPassword='EKS!sAWSome' \
-  --set service.type=LoadBalancer
+//INSTALL GRAFANA
+helm install grafana grafana-community/grafana --namespace grafana --create-namespace --set persistence.storageClassName=gp2 --set persistence.enabled=true --set adminPassword='EKS!sAWSome' --set service.type=LoadBalancer
