@@ -1,0 +1,2 @@
+helm repo add grafana-community https://grafana-community.github.io/helm-charts
+helm repo update
