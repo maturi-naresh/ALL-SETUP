@@ -4,3 +4,10 @@ helm repo update
 
 //INSTALL GRAFANA
 helm install grafana grafana-community/grafana --namespace grafana --create-namespace --set persistence.storageClassName=gp2 --set persistence.enabled=true --set adminPassword='EKS!sAWSome' --set service.type=LoadBalancer
+
+//GRAFANA DASHBOARD
+//USERNAME
+admin
+
+//PASSWORD
+EKS!sAWSome (REFER DOCUMENT)
