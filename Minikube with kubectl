@@ -20,7 +20,11 @@ mv kubectl /usr/local/bin/
 curl -LO https://github.com/kubernetes/minikube/releases/latest/download/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
 
+//START MINIKUBE WITH DOCKER
 minikube start --driver=docker --force
+
+//START MINIKUBE WITH CALICO (when working with network policies)
+minikube start --cni=calico --force
 
 //Check Kubectl Version
 kubectl version --client
